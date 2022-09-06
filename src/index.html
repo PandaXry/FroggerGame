@@ -1,9 +1,49 @@
 <html>
   <head>
     <title>FIT2102 A1 2022</title>
+    <style>
+      .game-container {
+        position: absolute;
+        width: 600;
+        height: 700;
+      }
+      #svgCanvas {
+        background-image: url('../assets/bg.png');
+      }
+      .scores {
+        background-color: rgb(41, 41, 36);
+        display: block;
+        width: 600;
+        height: 50;
+        font: bold 25px "Times New Roman";
+        color: red;
+        text-align: left;
+      }
+
+      .scores .text {
+        display: block;
+        width: 50%; 
+        height: 50%; 
+        margin-top: 10;
+      }
+    </style>
   </head>
   <body>
-    <h1>Frogger</h1>
-    <svg id="svgCanvas" width="600" height="600"></svg>
+    <h2>Frogger Game</h2>
+    <div class="game-container">
+      <div class="scores" id="scores">
+        <div class="text" style="float: left;">
+          <text>SCORE:</text>
+          <text id ="scoreCurrent">0</text>
+        </div>
+        <div class="text" style="float: right;">
+          <text>HIGH-SCORE:</text>
+          <text id ="scoreHi">0</text>
+        </div>
+      </div>
+      <div class="svgCanvas">
+        <svg id="svgCanvas" width="600" height="600"></svg>
+      </div>
+    </div>
   </body>
 </html>
