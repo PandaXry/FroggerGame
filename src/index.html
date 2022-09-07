@@ -1,14 +1,75 @@
+<!--
+ * @Description: 
+ * @Author: Yaoze Guo
+ * @Date: 2022-08-16 21:11:58
+ * @LastEditTime: 2022-09-08 02:19:21
+ * @LastEditors: Yaoze Guo
+-->
 <html>
   <head>
     <title>FIT2102 A1 2022</title>
     <style>
+      .frog {
+        fill: green;
+        /* fill: url(../assets/frog.png) */
+      }
+      .car {
+        fill: red;
+        /* fill: url(../assets/car1.png) no-repeat  */
+      }
+      /* .car2 {
+        fill: url(../assets/car2.png) no-repeat   
+      } */
+      .van {
+        fill: aqua
+        /* fill: url(../assets/van1.png) no-repeat  */
+      }
+      /* .van2 {
+        fill: url(../assets/van2.png) no-repeat 
+      }
+      .van3 {
+        fill: url(../assets/van3.png) no-repeat 
+      } */
+      .skull {
+        fill: url(../assets/skull.png) no-repeat 
+      }
+      .wood1 {
+        fill: bisque;
+        /* fill: url(../assets/wood1.png) no-repeat  */
+      }
+      .wood2 {
+        fill: bisque;
+        /* fill: url(../assets/wood2.png) no-repeat */
+      }
+      .wood3 {        
+        fill: bisque;
+        /* fill: url(../assets/wood3.png) no-repeat */
+      }
+      .doorC {
+        fill: blue;
+        /* fill: url(../assets/doorC.png) no-repeat */
+      }
+      .doorO {
+        fill: white;
+        /* fill: url(../assets/doorO.png) no-repeat */
+      }
+
       .game-container {
-        position: absolute;
+        display: inline-block;
+        position: relative;
         width: 600;
         height: 700;
       }
+      #controls {
+        margin-right: 10%;
+        width: 200;
+        height: auto;
+        float: right;
+        position: relative;
+      }
       #svgCanvas {
-        background-image: url('../assets/bg.png');
+        background-color: rgb(41, 41, 36);
+        /* background-image: url('../assets/bg.png'); */
       }
       .scores {
         background-color: rgb(41, 41, 36);
@@ -29,6 +90,7 @@
     </style>
   </head>
   <body>
+    <script src="/bundle.js"></script>
     <h2>Frogger Game</h2>
     <div class="game-container">
       <div class="scores" id="scores">
@@ -44,6 +106,27 @@
       <div class="svgCanvas">
         <svg id="svgCanvas" width="600" height="600"></svg>
       </div>
+    </div>
+    <div id="controls">
+      <h2>Controls:</h2>
+      <table>
+        <tr>
+          <td>Move Left</td>
+          <td><div id="ArrowLeft" class="key">&#8678;</div></td>
+        </tr>
+        <tr>
+          <td>Move Right</td>
+          <td><div id="ArrowRight" class="key">&#8680;</div></td>
+        </tr>
+        <tr>
+          <td>Go Straight</td>
+          <td><div id="ArrowUp" class="key">&#8679;</div></td>
+        </tr>
+        <tr>
+          <td>Restart Game</td>
+          <td><div id="Space" class="key" style="width: 50px">Space</div></td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
