@@ -2,8 +2,8 @@
  * @Description: 
  * @Author: Yaoze Guo
  * @Date: 2022-08-16 21:11:58
- * @LastEditTime: 2022-09-08 02:19:21
- * @LastEditors: Yaoze Guo
+ * @LastEditTime: 2022-09-11 21:27:03
+ * @LastEditors: Please set LastEditors
 -->
 <html>
   <head>
@@ -11,7 +11,8 @@
     <style>
       .frog {
         fill: green;
-        /* fill: url(../assets/frog.png) */
+        /* background-image: url('../assets/frog.png'); */
+        /* fill: url(../assets/frog.svg); */
       }
       .car {
         fill: red;
@@ -33,7 +34,7 @@
       .skull {
         fill: url(../assets/skull.png) no-repeat 
       }
-      .wood1 {
+      .wood {
         fill: bisque;
         /* fill: url(../assets/wood1.png) no-repeat  */
       }
@@ -46,11 +47,11 @@
         /* fill: url(../assets/wood3.png) no-repeat */
       }
       .doorC {
-        fill: blue;
+        fill: grey;
         /* fill: url(../assets/doorC.png) no-repeat */
       }
       .doorO {
-        fill: white;
+        fill: brown;
         /* fill: url(../assets/doorO.png) no-repeat */
       }
 
@@ -68,8 +69,8 @@
         position: relative;
       }
       #svgCanvas {
-        background-color: rgb(41, 41, 36);
-        /* background-image: url('../assets/bg.png'); */
+        /* background-color: rgb(41, 41, 36); */
+        background-image: url('../assets/bg.png');
       }
       .scores {
         background-color: rgb(41, 41, 36);
@@ -80,17 +81,39 @@
         color: red;
         text-align: left;
       }
-
       .scores .text {
         display: block;
         width: 50%; 
         height: 50%; 
         margin-top: 10;
       }
+      .key {
+        width: 18px;
+        text-align: center;
+        border-radius: 3px;
+        background-color: lightgray;
+      }
+      .highlight {
+        background-color: pink;
+        /* background-image: url(../assets/frog.png); */
+      }
+      div#controls {
+        float: right;
+        margin: 50px;
+      }
+      .gameover {
+        width: 418;
+        height: 113;
+        text-align: center;
+        border-radius: 3px;
+        font-family: sans-serif;
+        font-size: 80px;
+        fill: white;
+        background-color: aliceblue;
+      }
     </style>
   <script defer src="main.js"></script></head>
   <body>
-    <script src="/bundle.js"></script>
     <h2>Frogger Game</h2>
     <div class="game-container">
       <div class="scores" id="scores">
@@ -112,15 +135,19 @@
       <table>
         <tr>
           <td>Move Left</td>
-          <td><div id="ArrowLeft" class="key">&#8678;</div></td>
+          <td><div id="ArrowLeft" class="key">a</div></td>
         </tr>
         <tr>
           <td>Move Right</td>
-          <td><div id="ArrowRight" class="key">&#8680;</div></td>
+          <td><div id="ArrowRight" class="key">d</div></td>
         </tr>
         <tr>
           <td>Go Straight</td>
-          <td><div id="ArrowUp" class="key">&#8679;</div></td>
+          <td><div id="ArrowUp" class="key">w</div></td>
+        </tr>
+        <tr>
+          <td>Move Down</td>
+          <td><div id="ArrowDown" class="key">s</div></td>
         </tr>
         <tr>
           <td>Restart Game</td>
